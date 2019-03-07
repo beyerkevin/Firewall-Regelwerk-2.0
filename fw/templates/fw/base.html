@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<head>
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>FirewallTool</title>
+
+   
+	
+	<link href="{% static 'css/bootstrap.min.css' %}" rel='stylesheet' id="bootstrap-css">
+    <link href="{% static 'css/bootstrap.css' %}" rel='stylesheet'>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"></head>
+    <script src="{% static 'jquery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/functions.js' %}"></script>
+    
+    <link href="{% static 'css/style.css' %}" rel='stylesheet' type=" text/css">
+   
+   
+
+</head>
+
+
+
+
+
+<!-- Load Navbar -->
+ <nav class="navbar navbar-light bg-light  form-inline">
+            
+                <div class="navbar-header dropdown mr-auto ">
+                    <button type="button" id="btnSidebar"  class=" btn btn-dark " ><a class=" navbar-brand" >FirewallTool &nbsp<i class="fas fa-caret-down"></i></a></button>
+                </div>
+                
+                
+                <!---<button class=" sidebar-toggler" data-toggle="collapse" data-target="#collapse_target" ></button>-->
+                    
+
+                <ul class=" nav navbar-right ml-auto ">
+                        <li class="nav-item">
+                            <a href=""></a>
+                            <button type="button" id="User" class=" btn btn-light "><i class="fas fa-user"></i><img src="">User</button>
+                            
+                        </li>
+
+                        <li class="nav-item">
+                            <a href=""></a>
+                            <button type="button" id="Sync" class="btn btn-light" ><i class="fas fa-sync-alt"></i></button>
+                            
+                        </li>
+
+                        <li class="nav-item">
+                            <a href=""></a>
+                            <button type="button" class="btn btn-light">DE</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button id="sidebarCollapse" id="Config" type="button" class="btn btn-light">
+                            <i class="fas fa-cogs"></i>
+                            </button>
+                        </li>
+                </ul>
+                
+        </nav>   
+
+ <!--Main Page-->
+
+    <div id="wrapper">
+
+        <!-- Load Sidebar -->
+        <div id="sidebar-wrapper">
+
+        <ul class=" sidebar-nav mr-auto">
+                        <li>
+                                <a href="dashboard"><i class="fas fa-search"></i><span class=" nav-label">&nbsp Suche</span></a>
+                            </li>
+            
+            
+                            <li>
+                                    <a href="home"><i class="fas fa-home"></i><span class=" nav-label">&nbsp Home</span></a>
+                            </li>
+            
+                            <li>
+                                <a href="FW" class=" dropdown-toggle" data-toggle="collapse" data-target="#FWSubmenu" ><i class="fas fa-fire"></i><span class=" nav-label ">&nbsp Firewall<span class="caret"></span></span></a>
+                                <ul class=" collapse" id="FWSubmenu">
+                                    <li>
+                                        <a href="Freischaltungen"><i class="fas fa-fire"></i>&nbsp FW-Freischaltungen</a>
+                                    </li>
+                                    <li>
+                                        <a href="Self-Service"><i class="fas fa-fire"></i>&nbsp FW-Self_Service</a>
+                                    </li>
+                                </ul>
+                            </li>
+            
+                            <li>
+                                <a href="Q&S"><i class="fas fa-shield-alt"></i><span class=" nav-label">&nbsp Q&S</span></a>
+                            </li>
+            
+                            <li>
+                                <a href="Ticketsystem"><i class="fas fa-ticket-alt"></i><span class="nav-label">&nbsp Ticketsystem</span></a>
+                            </li>
+
+                </ul>
+
+        </div>
+
+
+        
+
+
+        <!--Main Page-->
+
+        <div id="content">
+
+            
+            
+            <div id="page-content-wrapper">
+
+            {% block content %}
+
+                <div class=" container-fluid">
+                                <div class="row">
+                                    <div class=" col-lg-12">
+                                        <h1>Suche</h1>
+                                        <div class="input-group">
+                                        <button id="btn" class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">KKZ<span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                        <input id="search" type="search" class="form-control" name="Suche" placeholder="Suche">
+                                        </div>
+                                    </div>
+                                </div>
+                </div>
+            {% endblock  %}
+            </div>
+
+            
+            
+            
+        </div>
+
+
+</div>
+
+
+ 
